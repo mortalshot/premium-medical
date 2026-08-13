@@ -51,6 +51,11 @@ if (galleries.length) {
 */
 // Запуск
 document.querySelectorAll('[data-fls-gallery]').forEach((gallery) => {
+	gallery.querySelectorAll('a').forEach((link) => {
+		const image = link.querySelector('img')
+		if (image?.currentSrc || image?.src) link.href = image.currentSrc || image.src
+	})
+
 	lightGallery(gallery, {
 		//plugins: [lgZoom, lgThumbnail],
 		licenseKey: KEY,
