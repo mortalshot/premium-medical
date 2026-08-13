@@ -1,0 +1,25 @@
+.copy-item {
+  display: inline-flex;
+  position: relative;
+
+  // .copy-item__button
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // .copy-item__tooltip
+  &__tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+}

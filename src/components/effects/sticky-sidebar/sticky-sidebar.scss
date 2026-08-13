@@ -1,0 +1,16 @@
+[data-fls-sticky-sidebar] {
+  --sticky-sidebar-height: auto;
+
+  position: relative;
+  min-width: 0;
+
+  &._sticky-sidebar-enabled {
+    min-height: var(--sticky-sidebar-height);
+  }
+}
+
+[data-fls-sticky-sidebar-content] {
+  ._sticky-sidebar-enabled & {
+    z-index: 1;
+  }
+}

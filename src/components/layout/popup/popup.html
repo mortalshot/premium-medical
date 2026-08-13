@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="@components/layout/popup/popup.scss">
+<div data-fls-popup="appointment" aria-hidden="true" class="popup appointment-popup">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+			<button data-fls-popup-close type="button" class="popup__close" aria-label="Aizvērt"><span></span><span></span></button>
+			<div data-fls-popup-content class="appointment-popup__content">
+				<h2 class="appointment-popup__title">E-pieraksts</h2>
+				<form class="appointment-popup__form" action="#">
+					<fieldset class="appointment-popup__group">
+						<legend class="appointment-popup__legend">Pacienta dati</legend>
+						<div class="appointment-popup__fields appointment-popup__fields--patient">
+							<input class="input input--form" type="text" name="first-name" placeholder="Jūsu vārds">
+							<input class="input input--form" type="text" name="last-name" placeholder="Jūsu uzvārds">
+							<input class="input input--form" type="tel" name="phone" placeholder="Tālruņa numurs" data-fls-input-phone data-fls-input-phone-country="lv">
+							<input class="input input--form" type="email" name="email" placeholder="Email">
+						</div>
+					</fieldset>
+					<fieldset class="appointment-popup__group">
+						<legend class="appointment-popup__legend">Izvēlieties speciālistu un pakalpojumu (nav obligāti)</legend>
+						<div class="appointment-popup__fields appointment-popup__fields--two">
+							<select data-fls-select data-fls-select-modif="form" name="specialist"><option value="" selected>Izvēlieties speciālistu</option><option value="family-doctor">Gimenes arsts</option><option value="dermatologist">Dermatologs</option><option value="gynecologist">Ginekologs</option><option value="neurologist">Neirologs</option><option value="physiotherapist">Fizioterapeits</option></select>
+							<select data-fls-select data-fls-select-modif="form" name="service"><option value="" selected>Norādiet pakalpojumu</option><option value="consultation">Arsta konsultacija</option><option value="diagnostics">Diagnostika</option><option value="check-up">CHECK-UP programma</option><option value="physiotherapy">Fizioterapija</option><option value="vaccination">Vakcinacija</option></select>
+						</div>
+					</fieldset>
+					<fieldset class="appointment-popup__group">
+						<legend class="appointment-popup__legend">Vēlamais datums un laiks</legend>
+						<div class="appointment-popup__fields appointment-popup__fields--date">
+							<div class="appointment-popup__picker"><input class="input input--form" type="date" name="date" aria-label="Datums" data-fls-date-picker><svg class="appointment-popup__picker-icon" aria-hidden="true"><use href="__spritemap#sprite-date"></use></svg></div>
+							<div class="appointment-popup__picker"><input class="input input--form" type="time" name="time" aria-label="Laiks" data-fls-time-picker><svg class="appointment-popup__picker-icon" aria-hidden="true"><use href="__spritemap#sprite-time"></use></svg></div>
+							<select data-fls-select data-fls-select-modif="form" name="availability"><option value="" selected>Pēc iespējas ātrāk</option><option value="morning">Rīta laikā</option><option value="afternoon">Pēcpusdienā</option><option value="evening">Vakara laikā</option><option value="date">Noteiktā laikā</option></select>
+						</div>
+					</fieldset>
+					<fieldset class="appointment-popup__group">
+						<legend class="appointment-popup__legend">Saņemt apstiprinājumu</legend>
+						<div class="appointment-popup__confirmation">
+							<label data-fls-checkbox class="checkbox"><input class="checkbox__input" type="checkbox" name="confirmation-phone"><span class="checkbox__text">Pa tālruni</span></label>
+							<label data-fls-checkbox class="checkbox"><input class="checkbox__input" type="checkbox" name="confirmation-email"><span class="checkbox__text">E-pastā</span></label>
+						</div>
+					</fieldset>
+					<fieldset class="appointment-popup__group">
+						<legend class="appointment-popup__legend">Komentārs</legend>
+						<textarea class="input input--form input--textarea" name="comment" placeholder="Jūsu komentārs"></textarea>
+					</fieldset>
+					<label data-fls-checkbox class="checkbox appointment-popup__agreement"><input class="checkbox__input" type="checkbox" name="agreement" required><span class="checkbox__text">Piekrītu <a href="#">lietošanas noteikumiem un privātuma politikai</a></span></label>
+					<button class="btn btn--primary appointment-popup__submit" type="submit">Nosūtīt</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="module" src="@components/layout/popup/popup-form.js"></script>

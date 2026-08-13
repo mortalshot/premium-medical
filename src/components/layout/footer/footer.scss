@@ -1,0 +1,81 @@
+.footer {
+	border-top: 2px solid $LGrey;
+
+	// .footer__section
+	&__section {
+		border-bottom: 2px solid $LGrey;
+	}
+}
+
+.footer-list {
+	min-width: 0;
+
+	// .footer-list__title
+	&__title {
+		display: block;
+		margin: 0 0 20px;
+		font-family: $fontSecond;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DBlue;
+		list-style: none;
+		cursor: default;
+
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin: 0;
+			padding-block: 12px;
+			font-size: 18px;
+			line-height: 1.5;
+			color: $mainColor;
+
+			.--spoller-init & {
+				cursor: pointer;
+
+				&::after {
+					flex: 0 0 8px;
+					width: 8px;
+					height: 8px;
+					border-right: 1px solid currentColor;
+					border-bottom: 1px solid currentColor;
+					content: '';
+					transform: rotate(45deg) translateY(-2px);
+					transition: transform $transition ease;
+				}
+
+				&.--spoller-active::after {
+					transform: rotate(225deg) translate(-2px, -2px);
+				}
+			}
+		}
+	}
+
+	// .footer-list__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		a {
+			font-size: 14px;
+			line-height: 1.6;
+			color: $DGrey;
+			transition: color $transition ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $Link;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+.partners {
+	overflow: hidden;
+	background-color: $White;
+
+	// .partners__heading
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 48, 40, 2, $maxWidth, $tablet);
+			@include adaptiveValue("margin-bottom", 40, 24, 3 $tablet, $minWidth);
+		}
+	}
+
+	// .partners__title
+	&__title {
+		margin: 0;
+		color: $DBlue;
+	}
+
+	// .partners__actions
+	&__actions {
+		display: flex;
+		flex: 0 0 auto;
+		gap: 8px;
+	}
+
+	// .partners__slider
+	&__slider {
+		overflow: hidden;
+
+		@media (max-width: toEm($mobile)) {
+			margin-inline: -24px;
+			padding-inline: 24px;
+		}
+	}
+
+	// .partners__wrapper
+	&__wrapper {
+		display: flex;
+		align-items: center;
+	}
+
+	// .partners__slide
+	&__slide {
+		display: flex;
+		flex: 0 0 100%;
+		align-items: center;
+		justify-content: center;
+		height: 170px;
+
+		@media (min-width: toEm($mobileSmall)) {
+			flex-basis: calc((100% - 120px) / 2);
+		}
+
+		@media (min-width: toEm($mobile)) {
+			flex-basis: calc((100% - 120px) / 4);
+			height: 120px;
+		}
+
+		@media (min-width: toEm($notebook)) {
+			flex-basis: calc((100% - 200px) / 6);
+		}
+	}
+
+	// .partners__image
+	&__image {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		filter: grayscale(1);
+		opacity: 0.35;
+		transition:
+			filter $transition ease,
+			opacity $transition ease;
+
+		@media (max-width: toEm($mobile)) {
+			filter: none;
+			opacity: 1;
+		}
+
+		@media (any-hover: hover) {
+			.partners__slide:hover & {
+				filter: grayscale(0);
+				opacity: 1;
+			}
+		}
+	}
+}

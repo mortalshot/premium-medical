@@ -1,0 +1,48 @@
+.menu__item_has-children {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @media (any-hover: hover) {
+    &:hover {
+      & > .menu__arrow {
+        transform: rotate(180deg);
+      }
+
+      & > ul {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: all !important;
+      }
+    }
+  }
+
+  & > .menu__arrow {
+    transition: $transition ease transform 0s;
+  }
+
+  & > ul {
+    background-color: $White;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: $transition ease all 0s;
+  }
+
+  &._hover {
+    & > ul {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: all !important;
+    }
+
+    & > .menu__arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

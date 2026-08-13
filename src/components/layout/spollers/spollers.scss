@@ -1,0 +1,59 @@
+.spollers {
+	display: grid;
+	gap: 15px;
+
+	// .spollers__item
+	&__item {
+	}
+
+	// .spollers__title
+	&__title {
+		width: 100%;
+		cursor: default;
+		text-align: left;
+		position: relative;
+		list-style: none;
+		padding-right: 24px;
+
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+		.--spoller-init & {
+			cursor: pointer;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0px;
+				top: 50%;
+				background-color: #000;
+				height: 2px;
+				width: 10px;
+				transition: transform 0.5s ease 0s;
+			}
+			&::before {
+				transform: translate(-75%, -50%) rotate(40deg);
+			}
+			&::after {
+				transform: translate(0, -50%) rotate(-40deg);
+			}
+			&.--spoller-active {
+				&::before {
+					transform: translateX(-75%) rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+		}
+	}
+
+	// .spollers__icon
+	&__icon {
+	}
+
+	// .spollers__body
+	&__body {
+	}
+}

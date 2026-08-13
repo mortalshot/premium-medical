@@ -1,0 +1,301 @@
+.hero {
+	--hero-min-height: auto;
+	--hero-mobile-media-height: 411px;
+	padding-inline: 0;
+
+	@media (min-width: toEm($mobile)) {
+		--hero-min-height: 820px;
+		padding-inline: 20px;
+	}
+
+	@media (min-width: toEm($mobile)) and (max-width: toEm($smallPC)) and (max-height: toEm(860)) {
+		--hero-min-height: min(820px, calc(100svh - 124px));
+	}
+
+	@media (min-width: toEm($smallPC)) {
+		--hero-min-height: clamp(620px, 72svh, 920px);
+		padding-inline: 24px;
+	}
+
+	// .hero__slider
+	&__slider {
+		overflow: hidden;
+		min-height: 0;
+		border-radius: 0;
+		background-color: $White;
+
+		@media (min-width: toEm($mobile)) {
+			min-height: var(--hero-min-height);
+			border-radius: 40px;
+			background-color: #aab4ba;
+		}
+	}
+
+	// .hero__wrapper
+	&__wrapper {
+		display: flex;
+	}
+
+	// .hero__slide
+	&__slide {
+		position: relative;
+		display: flex;
+		min-height: 0;
+		isolation: isolate;
+
+		@media (min-width: toEm($mobile)) {
+			min-height: var(--hero-min-height);
+		}
+	}
+
+	// .hero__media
+	&__media {
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+		height: var(--hero-mobile-media-height);
+		bottom: auto;
+
+		@media (min-width: toEm($mobile)) {
+			height: auto;
+			bottom: 0;
+		}
+	}
+
+	// .hero__picture
+	&__picture {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	// .hero__image
+	&__image,
+	&__video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// .hero__overlay
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		height: var(--hero-mobile-media-height);
+		bottom: auto;
+		background: linear-gradient(180deg, rgba($DBlue, 0) 35%, rgba($DBlue, 0.5) 100%), rgba($DBlue, 0.2);
+
+		@media (min-width: toEm($mobile)) {
+			height: auto;
+			bottom: 0;
+		}
+	}
+
+	// .hero__content
+	&__content {
+		display: block;
+		width: 100%;
+		padding: 0 24px 32px;
+		color: $White;
+
+		@media (min-width: toEm($mobile)) {
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			padding-block: 64px 40px;
+		}
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($smallPC)) and (max-height: toEm(860)) {
+			padding-block: 32px 24px;
+		}
+
+		@media (min-width: toEm($smallPC)) {
+			padding-block: clamp(40px, 5.5svh, 80px);
+		}
+	}
+
+	// .hero__intro
+	&__intro {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: var(--hero-mobile-media-height);
+		max-width: 850px;
+		padding: 24px 4px 28px;
+
+		@media (min-width: toEm($mobile)) {
+			display: block;
+			height: auto;
+			padding: 116px 0 0;
+		}
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($smallPC)) and (max-height: toEm(860)) {
+			padding-top: 48px;
+		}
+
+		@media (min-width: toEm($smallPC)) {
+			padding-top: clamp(72px, 8svh, 116px);
+		}
+	}
+
+	// .hero__title
+	&__title {
+		margin: 0;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 56, 36, 0, $tablet, $minWidth);
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+	}
+
+	// .hero__subtitle
+	&__subtitle {
+		font-family: $fontSecond;
+		font-weight: 300;
+		@include adaptiveValue("font-size", 40, 28, 0, $tablet, $minWidth);
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+	}
+
+	// .hero__text
+	&__text {
+		display: none;
+		margin: 26px 0 0;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 1.6;
+
+		@media (min-width: toEm($mobile)) {
+			display: block;
+		}
+	}
+
+	// .hero__actions
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		margin-top: 32px;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		@media (min-width: toEm($mobile)) {
+			flex-direction: row;
+			margin-top: 40px;
+		}
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($smallPC)) and (max-height: toEm(860)) {
+			margin-top: 24px;
+		}
+
+		.btn {
+			width: 100%;
+			min-height: 51px;
+			font-size: 16px;
+
+			@media (min-width: toEm($mobile)) {
+				width: auto;
+				min-width: 141px;
+				min-height: 53px;
+				font-size: 18px;
+			}
+		}
+
+		.btn--bg-white {
+			color: $White;
+			background-color: $DBlue;
+
+			@media (min-width: toEm($mobile)) {
+				color: $mainColor;
+				background-color: $White;
+			}
+		}
+
+		.btn--border {
+			color: $DBlue;
+
+			@media (min-width: toEm($mobile)) {
+				color: $White;
+			}
+		}
+	}
+
+	// .hero__contact-icon
+	&__contact-icon,
+	&__category-icon {
+		flex: 0 0 16px;
+		width: 16px;
+		height: 16px;
+		fill: none;
+		stroke: currentColor;
+	}
+
+	// .hero__categories
+	&__categories {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 6px;
+		margin-top: 24px;
+
+		@media (min-width: toEm($mobile)) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 10px;
+			margin-top: auto;
+		}
+
+		@media (min-width: toEm($smallPC)) {
+			grid-template-columns: repeat(6, minmax(0, 1fr));
+		}
+	}
+
+	// .hero__category-link
+	&__category-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		min-height: 65px;
+		padding: 12px 24px;
+		font-family: $fontSecond;
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DBlue;
+		background-color: $LGrey;
+		border: 1px solid transparent;
+		border-radius: 20px;
+		transition:
+			color $transition ease,
+			background-color $transition ease;
+
+		@media (min-width: toEm($mobile)) {
+			min-height: 92px;
+			padding: 16px 24px;
+			font-size: 18px;
+			color: $White;
+			background-color: transparent;
+			border-color: rgba($White, 0.8);
+			border-radius: 30px;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $DBlue;
+					background-color: $White;
+				}
+			}
+		}
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($smallPC)) and (max-height: toEm(860)) {
+			min-height: 78px;
+			padding: 12px 18px;
+		}
+
+		@media (min-width: toEm($smallPC)) {
+			@include adaptiveValue("font-size", 20, 18, 0, $maxWidth, $smallPC);
+		}
+	}
+}

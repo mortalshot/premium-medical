@@ -1,0 +1,8 @@
+[data-fls-lazy] {
+	opacity: 0;
+	transition: opacity $transition;
+
+	&._lazy-loaded {
+		opacity: 1;
+	}
+}

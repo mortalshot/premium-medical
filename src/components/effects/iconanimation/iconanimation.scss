@@ -1,0 +1,37 @@
+@keyframes shake-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-3px);
+  }
+  30% {
+    transform: translateX(2px);
+  }
+  45% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  90% {
+    transform: translateX(0.5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// .animation
+.animation {
+  @media (any-hover: hover) {
+    &:hover {
+      .animation__object {
+        animation: shake-horizontal 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+      }
+    }
+  }
+}

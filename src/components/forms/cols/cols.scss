@@ -1,0 +1,43 @@
+$grid-columns: 12;
+$breakpoints: (
+  xs: $mobileSmall,
+  sm: $mobileM,
+  md: $mobile,
+  lg: $tablet,
+  xl: $pc
+);
+
+.form__row,
+._row {
+  display: flex;
+  flex-wrap: wrap;
+  @include adaptiveValue("margin", -10, -6);
+}
+
+// БАЗА: один раз считаем ширину по CSS-переменной
+:where(.form__row, ._row) > :where([class^="col-"], [class*=" col-"]) {
+  // геометрия
+  flex: 0 0 calc(var(--col, 12) / 12 * 100%);
+  max-width: calc(var(--col, 12) / 12 * 100%);
+  width: 100%;
+  min-height: 1px;
+  @include adaptiveValue("padding", 10, 6);
+}
+
+// col-1 ... col-12 → только назначают --col
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    --col: #{$i};
+  }
+}
+
+// col-{bp}-1 ... col-{bp}-12 → тоже только --col
+@each $bp, $min in $breakpoints {
+  @media (min-width: toEm($min)) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$bp}-#{$i} {
+        --col: #{$i};
+      }
+    }
+  }
+}

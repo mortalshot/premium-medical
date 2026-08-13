@@ -1,0 +1,26 @@
+.above {
+  position: fixed;
+  @include adaptiveValue("bottom", 100, 15);
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    0.5s ease right,
+    0.5s opacity,
+    0.5s visibility 0s;
+  z-index: 10;
+
+  &._show {
+    @include adaptiveValue("right", 100, 15, 0, 1920, 1440);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  // .above__button
+  &__button {
+    @include adaptiveValue("width", 68, 40);
+    @include adaptiveValue("height", 68, 40);
+  }
+}

@@ -1,0 +1,58 @@
+<div class="header__menu menu">
+	<button type="button" data-fls-menu class="menu__icon icon-menu"><span></span></button>
+	<nav class="menu__body">
+		<ul class="menu__list">
+			<each loop='item in [
+					{"href": "index.html","ancor": "Главная"},
+					{"href": "#","ancor": "О компании"},
+					{"id":"services", "href":"#", "ancor":"Услуги",
+						"children":[
+							{"href":"#", "ancor":"Сотрудничество"},
+							{"href":"#", "ancor":"Библиотека"}
+						]
+					},
+					{"href": "#","ancor": "Оборудование"},
+				]'>
+
+				<if condition="![[item.children]]">
+					<if condition="'[[active]]' === '[[item.ancor]]'">
+						<li class="menu__item">
+							<a href="[[item.href]]" class="menu__link link-hover menu__link--active">[[item.ancor]]</a>
+						</li>
+					</if>
+					<else>
+						<li class="menu__item">
+							<a href="[[item.href]]" class="menu__link link-hover">[[item.ancor]]</a>
+						</li>
+					</else>
+				</if>
+
+				<if condition="[[item.children]]">
+					<li class="menu__item menu__item_has-children" data-fls-menuhaschildren>
+						<a href="[[item.href]]" class="menu__link link-hover">[[item.ancor]]</a>
+
+						<button type="button" class="menu__arrow" aria-expanded="false" aria-controls="submenu-[[item.id || item.ancor]]" tabindex="-1">
+							<svg class="icon" aria-hidden="true">
+								<use href="__spritemap#sprite-select"></use>
+							</svg>
+						</button>
+
+						<ul class="menu__sub-list" id="submenu-[[item.id || item.ancor]]">
+							<each loop='sub in [[item.children]]'>
+								<li><a href="[[sub.href]]">[[sub.ancor]]</a></li>
+							</each>
+						</ul>
+					</li>
+				</if>
+
+			</each>
+		</ul>
+	</nav>
+</div>
+
+<!-- 
+<fetch url="@components/layout/menu/menu.json">
+	<each loop='item in response'>
+	</each>
+</fetch>
+-->

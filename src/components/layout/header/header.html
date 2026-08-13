@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="@components/layout/header/mega-menu/mega-menu.scss">
+
+<header data-fls-header class="header">
+	<div class="header__container">
+		<div class="header__logo">
+			<include src="@components/custom/logo/logo.html"></include>
+		</div>
+
+		<div class="header__main">
+			<div class="header__top">
+				<div class="header__meta">
+					<a class="header__meta-link" href="#">
+						<svg class="header__meta-icon" aria-hidden="true">
+							<use href="__spritemap#sprite-camera"></use>
+						</svg>
+						<span>Virtuāla tūre</span>
+					</a>
+					<a class="header__meta-link" href="tel:+37166011160">
+						<svg class="header__meta-icon" aria-hidden="true">
+							<use href="__spritemap#sprite-phone2"></use>
+						</svg>
+						<span>+371 660 111 60</span>
+					</a>
+					<a class="header__meta-link" href="tel:+37124881111">
+						<svg class="header__meta-icon" aria-hidden="true">
+							<use href="__spritemap#sprite-phone2"></use>
+						</svg>
+						<span>+371 248 811 11 (tikai zvaniem)</span>
+					</a>
+				</div>
+
+				<div class="header__actions">
+					<button class="header__search" type="button" aria-label="Meklēt" aria-expanded="false" aria-controls="header-search" data-header-search-trigger>
+						<svg class="header__search-icon" aria-hidden="true">
+							<use href="__spritemap#sprite-search"></use>
+						</svg>
+					</button>
+					<div class="header__languages" aria-label="Valoda">
+						<button class="header__language header__language--active" type="button">LV</button>
+						<button class="header__language" type="button">EN</button>
+						<button class="header__language" type="button">RU</button>
+					</div>
+					<button class="btn btn--primary header__mobile-appointment" type="button" data-fls-button data-fls-popup-link="appointment" data-header-initially-hidden style="display: none;">E-Pieraksts</button>
+					<button class="header__menu-toggle" type="button" aria-label="Atvērt izvēlni" aria-expanded="false" data-header-mobile-menu-trigger data-header-initially-hidden style="display: none;">
+						<span class="header__menu-toggle-line" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+
+			<div class="header__bottom">
+				<nav class="header__navigation" aria-label="Galvenā navigācija">
+					<ul class="header__menu">
+						<li class="header__menu-item" data-header-services>
+							<button class="header__menu-link header__menu-link--with-icon" type="button" aria-expanded="false" aria-controls="services-menu" data-header-services-trigger>
+								<span>Pakalpojumi</span>
+								<svg class="header__menu-icon" aria-hidden="true">
+									<use href="__spritemap#sprite-chevron"></use>
+								</svg>
+							</button>
+						</li>
+						<li class="header__menu-item"><a class="header__menu-link" href="#">Avīācijas medicīna</a></li>
+						<li class="header__menu-item"><a class="header__menu-link" href="#">Speciālisti</a></li>
+						<li class="header__menu-item"><a class="header__menu-link" href="#">Cenas</a></li>
+						<li class="header__menu-item"><a class="header__menu-link" href="#">Jaunumi</a></li>
+						<li class="header__menu-item" data-header-about>
+							<button class="header__menu-link header__menu-link--with-icon" type="button" aria-expanded="false" aria-controls="about-menu" data-header-about-trigger>
+								<span>Par mums</span>
+								<svg class="header__menu-icon" aria-hidden="true">
+									<use href="__spritemap#sprite-chevron"></use>
+								</svg>
+							</button>
+							<include src="@components/layout/header/header-about-menu/header-about-menu.html" locals='{}'></include>
+						</li>
+						<li class="header__menu-item"><a class="header__menu-link" href="#">Kontakti</a></li>
+					</ul>
+				</nav>
+
+				<div class="header__mobile-settings" data-header-initially-hidden style="display: none;">
+					<div class="header__mobile-languages" aria-label="Valoda">
+						<button class="header__language header__language--active" type="button">LV</button>
+						<button class="header__language" type="button">EN</button>
+						<button class="header__language" type="button">RU</button>
+					</div>
+					<div class="header__mobile-socials">
+						<div class="socials">
+							<a class="socials__link" href="#" aria-label="Facebook"><svg class="socials__icon" aria-hidden="true"><use href="__spritemap#sprite-facebook"></use></svg></a>
+							<a class="socials__link" href="#" aria-label="Instagram"><svg class="socials__icon" aria-hidden="true"><use href="__spritemap#sprite-instagram"></use></svg></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__appointment">
+					<button class="btn btn--primary" type="button" data-fls-popup-link="appointment">E-Pieraksts</button>
+				</div>
+
+				<div class="header__mobile-contacts" data-header-initially-hidden style="display: none;">
+					<div class="header__mobile-contact">
+						<span class="header__mobile-label">Tālrunis</span>
+						<a href="tel:+37166011160">+371 660 111 60</a>
+						<a href="tel:+37124881111">+371 248 811 11 <small>(tikai zvaniem)</small></a>
+					</div>
+					<div class="header__mobile-contact">
+						<span class="header__mobile-label">E-pasts</span>
+						<a href="mailto:info@premiummedical.lv">info@premiummedical.lv</a>
+					</div>
+					<div class="header__mobile-contact">
+						<span class="header__mobile-label">Adrese</span>
+						<p>13.janvāra iela 3, 2. stāvs,<br>Rīga, LV - 1050</p>
+					</div>
+					<div class="header__mobile-contact">
+						<span class="header__mobile-label">Darba laiks</span>
+						<p>Pr. - Pk.: 09:00 - 20:00<br>Sestdien.: 09:00 - 17:00<br>Svētdien.: Brīvs</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include src="@components/layout/header/mega-menu/mega-menu.html" locals='{}'></include>
+	<include src="@components/layout/header/header-search/header-search.html" locals='{}'></include>
+</header>
+
+<script type="module" src="@components/layout/header/header.js"></script>

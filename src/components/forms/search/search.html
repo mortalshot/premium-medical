@@ -1,0 +1,27 @@
+<div class="search" data-fls-search>
+  <button type="button" class="search__toggle animation" data-fls-iconanimation>
+    <svg class="icon animation__object">
+      <use href="__spritemap#sprite-search"></use>
+    </svg>
+  </button>
+
+  <form action="#" method="GET" class="search__heading" style="display: none;">
+    <div class="search__input">
+      <svg class="icon">
+        <use href="__spritemap#sprite-search"></use>
+      </svg>
+      <input data-fls-input autocomplete="off" type="text" name="search-input" placeholder="Поиск" class="input">
+      <button type="submit" class="search__submit btn btn_bg-primary">Найти</button>
+    </div>
+
+    <button type="button" class="search__toggle animation" data-fls-iconanimation>
+      <svg class="icon animation__object">
+        <use href="__spritemap#sprite-close"></use>
+      </svg>
+    </button>
+  </form>
+
+  <div class="search__wrapper" style="display: none;">
+    <div class="search__container"></div>
+  </div>
+</div>

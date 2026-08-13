@@ -1,0 +1,38 @@
+<div class="breadcrumbs" data-fls-breadcrumbs>
+  <div class="breadcrumbs__container">
+    <nav class="breadcrumbs__nav" aria-label="Breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <ul class="breadcrumbs__list">
+        <each loop="item, idx in [[items]]">
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+
+            <if condition="idx < (items.length - 1)">
+              <a class="breadcrumbs__link" href="[[item.href]]" itemprop="item">
+                <span itemprop="name">[[item.title]]</span>
+              </a>
+            </if>
+
+            <if condition="idx == (items.length - 1)">
+              <span class="breadcrumbs__current" itemprop="name" aria-current="page">
+                [[item.title]]
+              </span>
+            </if>
+
+            <meta itemprop="position" content="[[idx + 1]]">
+          </li>
+
+          <if condition="idx < (items.length - 1)">
+            <span class="breadcrumbs__sep" aria-hidden="true"> / </span>
+          </if>
+        </each>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- <include src="@components/layout/breadcrumbs/breadcrumbs.html" locals='{
+  "items": [
+    { "href": "index.html", "title": "Главная" },
+    { "title": "Контакты" }
+  ]
+}'>
+</include> -->

@@ -1,0 +1,162 @@
+.programs-widget {
+	overflow: hidden;
+
+	// .programs-widget__container
+	&__container {
+		display: grid;
+		width: 100%;
+		min-width: 0;
+		row-gap: 24px;
+		@include adaptiveValue("column-gap", 80, 48, 2, $maxWidth, $smallPC);
+		@include adaptiveValue("column-gap", 48, 24, 3, $smallPC, $mobile);
+
+		@media (min-width: toEm($mobile)) {
+			grid-template-columns: minmax(280px, 0.36fr) minmax(0, 0.64fr);
+		}
+
+		@media (min-width: toEm($smallPC)) {
+			grid-template-columns: minmax(300px, percent(328, 1600)) minmax(0, 1fr);
+		}
+	}
+
+	// .programs-widget__intro
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		min-width: 0;
+		position: relative;
+		z-index: 2;
+		@include adaptiveValue("row-gap", 40, 24, 0, $tablet, $minWidth);
+		background-color: $White;
+
+		@media (max-width: toEm($mobile)) {
+			> .programs-widget__actions {
+				display: none;
+			}
+		}
+
+		@media (min-width: toEm($mobile)) {
+			grid-column: 1;
+		}
+	}
+
+	// .programs-widget__title
+	&__title {
+		margin: 0;
+		font-family: $fontSecond;
+		font-weight: 300;
+		line-height: 1.5;
+		color: $DBlue;
+	}
+
+	// .programs-widget__text
+	&__text {
+		max-width: 370px;
+		@include adaptiveValue("font-size", 18, 16, 0, $tablet, $minWidth);
+		font-weight: 300;
+		line-height: 1.6;
+		color: $DGrey;
+	}
+
+	// .programs-widget__actions
+	&__actions {
+		display: flex;
+		gap: 8px;
+		margin-top: 0;
+
+		@media (min-width: toEm($mobile)) {
+			// .programs-widget__actions--mobile
+			&--mobile {
+				display: none;
+			}
+		}
+
+		// .programs-widget__actions--mobile
+		&--mobile {
+		}
+	}
+
+	// .programs-widget__slider
+	&__slider {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		overflow: visible;
+		clip-path: inset(0 -100vw 0 0);
+
+		@media (min-width: toEm($mobile)) {
+			grid-column: 2;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			margin-inline: -24px;
+			padding-inline: 24px;
+		}
+	}
+
+	// .programs-widget__wrapper
+	&__wrapper {
+		display: flex;
+	}
+
+	// .programs-widget__slide
+	&__slide {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		flex: 0 0 256px;
+		width: 256px;
+		@include adaptiveValue("height", 430, 292, 0, $tablet, $minWidth);
+		@include adaptiveValue("padding", 40, 32, 0, $tablet, $mobile);
+		overflow: hidden;
+		color: $White;
+		border-radius: 20px;
+		isolation: isolate;
+		transition: $transition ease border-radius 0s;
+
+		@media (min-width: toEm($mobile)) {
+			flex-basis: 376px;
+			width: 376px;
+		}
+
+		&::before {
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: linear-gradient(180deg, rgba($DBlue, 0) 35%, rgba($DBlue, 0.65) 100%);
+			content: "";
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-radius: 40px;
+
+				.programs-widget__image {
+					transform: scale(1.04);
+				}
+			}
+		}
+	}
+
+	// .programs-widget__image
+	&__image {
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform $transition ease;
+	}
+
+	// .programs-widget__slide-title
+	&__slide-title {
+		font-family: $fontSecond;
+		font-size: 24px;
+		@include adaptiveValue("font-size", 24, 20, 0, $tablet, $mobile);
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+	}
+}

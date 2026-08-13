@@ -1,0 +1,185 @@
+.footer-info {
+	// .footer-info__container
+	&__container {
+		@include adaptiveValue("padding-block", 80, 40, 0, $maxWidth, $notebook);
+
+		@media (max-width: toEm($mobile)) {
+			padding-block: 32px 24px;
+		}
+	}
+	// .footer-info__main
+	&__main {
+		display: grid;
+		grid-template-columns: percent(768, 1600) 1fr;
+		gap: 80px;
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($notebook)) {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 48px;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 32px;
+		}
+	}
+	// .footer-info__contacts
+	&__contacts {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 32px;
+		row-gap: 24px;
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($notebook)) {
+			max-width: 980px;
+			column-gap: 48px;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			gap: 24px 32px;
+		}
+
+		span {
+			display: block;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.6;
+			color: $DGrey;
+		}
+
+		a:not(.btn) {
+			display: block;
+			font-family: $fontSecond;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.5;
+			letter-spacing: -0.03em;
+			color: $DBlue;
+
+			@media (max-width: toEm($mobile)) {
+				font-size: 16px;
+			}
+		}
+
+		small {
+			font-family: $fontFamily;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 1.5;
+			color: $DGrey;
+		}
+
+		p {
+			margin: 0;
+			font-family: $fontSecond;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.5;
+			letter-spacing: -0.03em;
+			color: $DBlue;
+
+			@media (max-width: toEm($mobile)) {
+				font-size: 16px;
+			}
+		}
+
+		.btn {
+			align-self: flex-start;
+		}
+	}
+
+	// .footer-info__contacts-content
+	&__contacts-content {
+		display: contents;
+
+		@media (max-width: toEm($mobile)) {
+			grid-column: 1 / -1;
+			order: 1;
+			display: grid;
+			gap: 16px;
+			padding: 20px;
+			background-color: $LGrey;
+			border-radius: 20px;
+		}
+	}
+	// .footer-info__nav
+	&__nav {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 48px;
+		@include adaptiveValue("column-gap", 48, 24, 2, $maxWidth, $notebook);
+		@include adaptiveValue("column-gap", 48, 24, 1, $notebook, $mobile);
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 0;
+			order: -1;
+		}
+	}
+	// .footer-info__button
+	&__button {
+		@media (max-width: toEm($mobile)) {
+			order: 0;
+			align-self: center;
+		}
+
+		.btn {
+			@media (max-width: toEm($mobileSmall)) {
+				width: 100%;
+			}
+		}
+	}
+	// .footer-info__socials
+	&__socials {
+		justify-self: start;
+
+		@media (max-width: toEm($mobile)) {
+			order: 0;
+			align-self: center;
+		}
+	}
+	// .footer-info__bottom
+	&__bottom {
+		display: grid;
+		grid-template-columns: auto auto 1fr;
+		align-items: center;
+		gap: 32px;
+		margin-top: 84px;
+		font-size: 14px;
+		color: $DGrey;
+
+		@media (min-width: toEm($mobile)) and (max-width: toEm($notebook)) {
+			margin-top: 48px;
+			gap: 24px;
+			font-size: 12px;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 6px;
+			margin-top: 24px;
+			font-size: 10px;
+		}
+	}
+	// .footer-info__developer
+	&__developer {
+		display: inline-flex;
+		align-items: center;
+		justify-self: end;
+		gap: 8px;
+		color: inherit;
+
+		img {
+			width: 80px;
+			height: 25px;
+			object-fit: contain;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			justify-self: start;
+			margin-top: 20px;
+		}
+	}
+}

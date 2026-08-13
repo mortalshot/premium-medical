@@ -1,0 +1,138 @@
+.header-about-menu {
+	position: absolute;
+	top: calc(100% - 22px);
+	left: 50%;
+	z-index: 10;
+	width: 193px;
+	padding-top: 44px;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -10px);
+	transition:
+		opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+		transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+
+	@media (max-width: toEm($smallPC)) {
+		position: fixed;
+		inset: 0;
+		z-index: 12;
+		display: block;
+		width: auto;
+		padding: 48px 44px;
+		overflow-y: auto;
+		visibility: hidden;
+		background-color: $White;
+		transform: translateY(-12px);
+	}
+
+	&._header-about-menu-open {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate(-50%, 0);
+
+		@media (max-width: toEm($smallPC)) {
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
+
+	// .header-about-menu__header
+	&__header {
+		display: none;
+
+		@media (max-width: toEm($smallPC)) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+			margin-bottom: 32px;
+		}
+	}
+
+	// .header-about-menu__heading
+	&__heading {
+		margin: 0;
+		font-family: $fontSecond;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.5;
+		color: $mainColor;
+	}
+
+	// .header-about-menu__close
+	&__close {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		color: $mainColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $DBlue;
+			}
+		}
+	}
+
+	// .header-about-menu__close-icon
+	&__close-icon {
+		width: 24px;
+		height: 24px;
+		fill: currentColor;
+	}
+
+	// .header-about-menu__content
+	&__content {
+		padding: 24px;
+		background-color: $White;
+
+		@media (max-width: toEm($smallPC)) {
+			padding: 0;
+		}
+	}
+
+	// .header-about-menu__title
+	&__title {
+		margin: 0 0 32px;
+		font-family: $fontSecond;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 1.5;
+		color: $DBlue;
+
+		@media (max-width: toEm($smallPC)) {
+			display: none;
+		}
+	}
+
+	// .header-about-menu__list
+	&__list {
+		display: grid;
+		gap: 16px;
+	}
+
+	// .header-about-menu__link
+	&__link {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.6;
+		color: $DGrey;
+		transition: color $transition ease;
+
+		@media (max-width: toEm($smallPC)) {
+			font-family: $fontSecond;
+			font-size: 14px;
+			line-height: 1.5;
+			color: $DBlue;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $Link;
+			}
+		}
+	}
+}

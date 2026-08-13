@@ -1,0 +1,152 @@
+//<BUTTONS (a.btn+tab)>
+// Сниппет (HTML): btn
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	text-wrap: balance;
+	border-radius: 30px;
+	min-height: 51px;
+	padding: 12px 24px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: -0.03em;
+	white-space: nowrap;
+	transition: $transition ease all 0s;
+
+	// .btn--primary
+	&--primary {
+		background-color: $DBlue;
+		color: $White;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $mainColor;
+			}
+		}
+
+		&:active {
+			background-color: #082e4b;
+		}
+	}
+
+	// .btn--bg-white
+	&--bg-white {
+		min-height: 44px;
+		padding-inline: 20px;
+		font-size: 16px;
+		font-weight: 300;
+		color: $mainColor;
+		background-color: $White;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $DBlue;
+				color: $White;
+			}
+		}
+	}
+
+	// .btn--border
+	&--border {
+		gap: 10px;
+		min-height: 44px;
+		padding-inline: 20px;
+		font-size: 16px;
+		font-weight: 300;
+		color: $White;
+		border: 1px solid currentColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $DBlue;
+				border-color: $DBlue;
+			}
+		}
+	}
+
+	// .btn--border-blue
+	&--border-blue {
+		gap: 10px;
+		min-height: 40px;
+		padding: 8px 16px;
+		font-size: 14px;
+		font-weight: 300;
+		color: $DBlue;
+		border: 1px solid currentColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $White;
+				background-color: $DBlue;
+			}
+		}
+	}
+
+	// .btn--small
+	&--small {
+		min-height: 40px;
+		padding: 8px 16px;
+		font-size: 14px;
+		font-weight: 300;
+		letter-spacing: 0;
+	}
+}
+
+.slider-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	@include adaptiveValue("width", 53, 36, 0, $tablet, $minWidth);
+	@include adaptiveValue("height", 53, 36, 0, $tablet, $minWidth);
+	padding: 0;
+	border: 1px solid currentColor;
+	border-radius: 50%;
+	transition:
+		color $transition ease,
+		border-color $transition ease,
+		background-color $transition ease;
+
+	// .slider-button--light
+	&--light {
+		color: $White;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $DBlue;
+				border-color: $DBlue;
+			}
+		}
+	}
+
+	// .slider-button--dark
+	&--dark {
+		color: $DBlue;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $White;
+				background-color: $DBlue;
+			}
+		}
+	}
+
+	// .slider-button__icon
+	&__icon {
+		width: 20px;
+		height: 20px;
+		fill: none;
+		stroke: currentColor;
+	}
+
+	// .slider-button__icon--prev
+	&__icon--prev {
+		transform: rotate(-180deg);
+	}
+
+	// .slider-button__icon--next
+	&__icon--next {
+	}
+}

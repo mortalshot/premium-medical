@@ -1,0 +1,218 @@
+{
+  "statistics": {
+    "sessions": [
+      {
+        "date": "10.08.2026",
+        "start": 1786368826433,
+        "end": 1786368826433
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786368850071,
+        "end": 1786368850071
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786368979018,
+        "end": 1786370199873
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786370203316,
+        "end": 1786370268775
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786370301349,
+        "end": 1786371982443
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786371985867,
+        "end": 1786372128075
+      },
+      {
+        "date": "10.08.2026",
+        "start": 1786372130983,
+        "end": 1786400692618
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786453053000,
+        "end": 1786453757283
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786453766072,
+        "end": 1786453774732
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786453796751,
+        "end": 1786453842432
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786453845543,
+        "end": 1786453857881
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786453874791,
+        "end": 1786477399818
+      },
+      {
+        "date": "11.08.2026",
+        "start": 1786477405863,
+        "end": 1786484175834
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786536087338,
+        "end": 1786554374342
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554453936,
+        "end": 1786554453936
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554538147,
+        "end": 1786554538147
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554619475,
+        "end": 1786554619475
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554668672,
+        "end": 1786554720827,
+        "type": "build"
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554737552,
+        "end": 1786554737552
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554766398,
+        "end": 1786554839948,
+        "type": "build"
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554859984,
+        "end": 1786554859984
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786554919488,
+        "end": 1786554972452,
+        "type": "build"
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786555018350,
+        "end": 1786555115119,
+        "type": "build"
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786555137617,
+        "end": 1786555137617
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786555254911,
+        "end": 1786555288161,
+        "type": "build"
+      },
+      {
+        "date": "12.08.2026",
+        "start": 1786555314982,
+        "end": 1786555314982
+      },
+      {
+        "date": "13.08.2026",
+        "start": 1786615456454,
+        "end": 1786644133536
+      },
+      {
+        "date": "13.08.2026",
+        "start": 1786644154301,
+        "end": 1786644376411
+      },
+      {
+        "date": "13.08.2026",
+        "start": 1786644379355,
+        "end": 1786644511235,
+        "type": "build"
+      },
+      {
+        "date": "13.08.2026",
+        "start": 1786644972824,
+        "end": 1786649744678,
+        "type": "build"
+      }
+    ],
+    "files": [
+      "home.html",
+      "spritemap.scss",
+      "settings.scss",
+      "style.scss",
+      "up.svg",
+      "phone2.svg",
+      "search.svg",
+      "location.svg",
+      "phone.svg",
+      "chevron.svg",
+      "camera.svg",
+      "time.svg",
+      "email.svg",
+      "facebook.svg",
+      "instagram.svg",
+      "Unbounded.zip",
+      "Manrope.zip",
+      "Manrope-Medium.ttf",
+      "Manrope-Medium.woff2",
+      "Manrope-Regular.ttf",
+      "Manrope-Regular.woff2",
+      "Manrope-SemiBold.ttf",
+      "Manrope-SemiBold.woff2",
+      "Unbounded-Light.ttf",
+      "Unbounded-Light.woff2",
+      "Unbounded-Regular.ttf",
+      "Unbounded-Regular.woff2",
+      "head.html",
+      "header.html",
+      "header.scss",
+      "button.scss",
+      "header.js",
+      "close.svg",
+      "hero.html",
+      "hero.js",
+      "hero.scss",
+      "popup.scss",
+      "popup.html",
+      "popup-form.js",
+      "date.svg",
+      "file.svg",
+      "checkbox.scss",
+      "select.scss",
+      "input.scss",
+      "counseling.scss",
+      "counseling.html",
+      "service-cards.html",
+      "service-cards.scss",
+      "interviews.scss",
+      "news-widget.scss",
+      "about-clinic.scss",
+      "about-clinic.html",
+      "footer-info.html"
+    ]
+  }
+}

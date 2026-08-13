@@ -1,0 +1,39 @@
+.breadcrumbs {
+  padding: 40px 0;
+
+  // .breadcrumbs__container
+  &__container {
+  }
+
+  // .breadcrumbs__nav
+  &__nav {
+  }
+
+  // .breadcrumbs__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // .breadcrumbs__item
+  &__item {
+  }
+
+  // .breadcrumbs__link
+  &__link {
+    white-space: nowrap;
+  }
+
+  // .breadcrumbs__current
+  &__current {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // .breadcrumbs__sep
+  &__sep {
+  }
+}

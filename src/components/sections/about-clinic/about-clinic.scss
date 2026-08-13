@@ -1,0 +1,345 @@
+.about-clinic {
+	background-color: $White;
+
+	// .about-clinic__container
+	&__container {
+		display: grid;
+		grid-template-columns: minmax(0, percent(648, 1600)) minmax(0, 1fr);
+		align-items: start;
+		gap: 96px;
+		@include adaptiveValue("column-gap", 96, 20, 0, $maxWidth, $notebook);
+
+		@media (max-width: toEm($notebook)) {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+
+	// .about-clinic__content
+	&__content {
+		max-width: 647px;
+		position: sticky;
+		top: 32px;
+
+		@media (max-width: toEm($notebook)) {
+			max-width: none;
+			position: static;
+		}
+	}
+
+	// .about-clinic__title
+	&__title {
+		margin: 0;
+		@include adaptiveValue("font-size", 40, 28, 0, $tablet, $minWidth);
+		font-weight: 300;
+		line-height: 1.5;
+		color: $DBlue;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 40, 2, $maxWidth, $tablet);
+			@include adaptiveValue("margin-bottom", 40, 24, 3, $tablet, $minWidth);
+		}
+	}
+
+	// .about-clinic__lead
+	&__lead {
+		margin: 0;
+		font-family: $fontSecond;
+		@include adaptiveValue("font-size", 24, 20, 0, $tablet, $minWidth);
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DGrey;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 32, 2, $maxWidth, $tablet);
+			@include adaptiveValue("margin-bottom", 32, 24, 3, $tablet, $minWidth);
+		}
+	}
+
+	// .about-clinic__text
+	&__text {
+		margin: 0;
+		@include adaptiveValue("font-size", 18, 16, 0, $tablet, $minWidth);
+		font-weight: 300;
+		line-height: 1.6;
+		color: $DGrey;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 40, 2, $maxWidth, $tablet);
+			@include adaptiveValue("margin-bottom", 40, 32, 3, $tablet, $minWidth);
+		}
+	}
+
+	// .about-clinic__contacts
+	&__contacts {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: center;
+		gap: 24px;
+
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
+		@media (max-width: toEm($notebook)) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+		@media (max-width: toEm($tablet)) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	// .about-clinic__contact
+	&__contact {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		font-family: $fontSecond;
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DBlue;
+
+		& small {
+			display: block;
+			font-family: $fontFamily;
+			font-size: 12px;
+			line-height: 1.3;
+		}
+	}
+
+	// .about-clinic__contact-icon
+	&__contact-icon {
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		fill: currentColor;
+
+		&:has(use[href$="#sprite-phone"]) {
+			fill: none;
+			stroke: currentColor;
+		}
+	}
+
+	// .about-clinic__actions
+	&__actions {
+		display: flex;
+		gap: 8px;
+
+		@media (max-width: toEm($mobile)) {
+			flex-direction: column;
+		}
+
+		.btn {
+			@include adaptiveValue("font-size", 18, 16, 0, $tablet, $minWidth);
+			padding-inline: 24px;
+			line-height: 1.6;
+			letter-spacing: 0;
+
+			@media (max-width: toEm($notebook)) {
+				flex: 1;
+			}
+		}
+	}
+
+	// .about-clinic__appointment
+	&__appointment {
+		@media (max-width: toEm($mobile)) {
+			width: 100%;
+		}
+	}
+
+	// .about-clinic__about-link
+	&__about-link {
+		@media (max-width: toEm($mobile)) {
+			justify-content: center;
+			width: 100%;
+		}
+	}
+
+	// .about-clinic__gallery
+	&__gallery {
+		display: grid;
+		min-width: 0;
+		width: 100%;
+		gap: 8px;
+
+		@media (max-width: toEm($notebook)) {
+			display: none;
+		}
+	}
+
+	// .about-clinic__adaptive-image
+	&__adaptive-image {
+		position: relative;
+		display: none;
+		overflow: hidden;
+		aspect-ratio: 976 / 509;
+		border-radius: 20px;
+
+		& img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		& img {
+			object-fit: cover;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background-color: rgba(13, 58, 94, 0.28);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					opacity: 1;
+				}
+
+				& .about-clinic__zoom-icon {
+					opacity: 1;
+					transform: translate(-50%, -50%) scale(1);
+				}
+			}
+		}
+
+		@media (max-width: toEm($notebook)) {
+			display: block;
+			margin-inline: auto;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			display: none;
+		}
+
+		// .about-clinic__adaptive-image--mobile
+		&--mobile {
+			margin: 0;
+
+			@media (max-width: toEm($notebook)) {
+				display: none;
+			}
+
+			@media (max-width: toEm($mobile)) {
+				display: block;
+				aspect-ratio: 372 / 296;
+
+				&:not(:last-child) {
+					margin-bottom: 24px;
+				}
+			}
+		}
+	}
+
+	// .about-clinic__gallery-wrapper
+	&__gallery-wrapper {
+		display: grid;
+		min-width: 0;
+		width: 100%;
+		gap: 8px;
+
+		@media (min-width: toEm($notebook)) {
+			gap: 8px;
+		}
+	}
+
+	// .about-clinic__gallery-row
+	&__gallery-row {
+		display: grid;
+		min-width: 0;
+		width: 100%;
+		gap: 8px;
+
+		&:nth-child(1) {
+			grid-template-columns: minmax(0, 533fr) minmax(0, 315fr);
+			grid-template-rows: 320fr 466fr;
+
+			& .about-clinic__gallery-link:nth-child(1) {
+				grid-row: 1 / span 2;
+			}
+		}
+
+		&:nth-child(2) {
+			grid-template-columns: minmax(0, 246fr) minmax(0, 602fr);
+			aspect-ratio: 848 / 400;
+		}
+
+		&:nth-child(3) {
+			grid-template-columns: minmax(0, 616fr) minmax(0, 238fr);
+			grid-template-rows: 235fr 292fr;
+
+			& .about-clinic__gallery-link:nth-child(1) {
+				grid-row: 1 / span 2;
+			}
+		}
+	}
+
+	// .about-clinic__gallery-link
+	&__gallery-link {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		border-radius: 20px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background-color: rgba(13, 58, 94, 0.28);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+
+			& .about-clinic__zoom-icon {
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+	}
+
+	// .about-clinic__image
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// .about-clinic__zoom-icon
+	&__zoom-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 2;
+		width: 56px;
+		height: 56px;
+		color: $White;
+		fill: none;
+		stroke: $White;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.82);
+		transition:
+			opacity 0.3s ease,
+			transform 0.3s ease;
+	}
+}

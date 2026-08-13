@@ -1,0 +1,210 @@
+//<INPUT>
+// Сниппет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.input {
+	width: 100%;
+	display: block;
+	padding: 10px 20px;
+	font-weight: 300;
+	line-height: 160%;
+	color: $mainColor;
+	background-color: $LGrey;
+	border: 0;
+	border-radius: 30px;
+	outline: 0;
+	caret-color: inherit;
+	transition: background-color $transition ease;
+
+	&:focus {
+		background-color: #e8eaeb;
+	}
+
+	&.--form-focus {
+	}
+
+	&.--form-error {
+	}
+
+	&[placeholder]:not([data-fls-placeholder-nohiden]) {
+		&::placeholder {
+			color: $DGrey;
+			opacity: 1;
+			transition: opacity $transition ease;
+		}
+
+		&:focus::placeholder {
+			opacity: 0;
+		}
+	}
+
+	// .input--form
+	&--form {
+		min-height: 50px;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.6;
+	}
+
+	// .input--textarea
+	&--textarea {
+		min-height: 109px;
+		padding-block: 16px;
+	}
+}
+
+textarea.input {
+	resize: vertical;
+	padding: 10px 20px;
+}
+
+input[type="date"].input,
+input[type="time"].input {
+	cursor: pointer;
+}
+
+.iti {
+	width: 100%;
+
+	.input {
+		padding-left: 84px;
+	}
+
+	.iti__selected-country {
+		padding-left: 20px;
+		border-radius: 30px 0 0 30px;
+		background-color: transparent;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.iti__flag {
+		border-radius: 1px;
+	}
+
+	.iti__selected-dial-code {
+		font-weight: 300;
+		color: $DGrey;
+	}
+
+	.iti__arrow {
+		width: 8px;
+		height: 8px;
+		margin-left: 8px;
+		border: 0;
+		border-right: 1px solid $mainColor;
+		border-bottom: 1px solid $mainColor;
+		transform: rotate(45deg) translateY(-2px);
+
+		&--up {
+			transform: rotate(-135deg) translateY(-2px);
+		}
+	}
+
+	.iti__country-list {
+		z-index: 5;
+		overflow-x: hidden;
+		max-height: 244px;
+		border: 1px solid rgba($DBlue, 0.14);
+		border-radius: 16px;
+		background-color: $White;
+		box-shadow: 0 12px 32px rgba($mainColor, 0.12);
+		font-family: $fontFamily;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.6;
+		color: $mainColor;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 6px;
+			background-color: rgba($DBlue, 0.32);
+		}
+	}
+
+	.iti__search-input-wrapper {
+		padding: 10px 12px;
+		border-bottom: 1px solid rgba($DBlue, 0.1);
+		background-color: $White;
+	}
+
+	.iti__search-input {
+		height: 42px;
+		margin: 0;
+		padding: 8px 40px;
+		border: 1px solid transparent;
+		border-radius: 12px;
+		background-color: $LGrey;
+		font: inherit;
+		color: $mainColor;
+		outline: 0;
+		transition:
+			background-color $transition ease,
+			border-color $transition ease,
+			box-shadow $transition ease;
+
+		&:focus {
+			border-color: $DBlue;
+			background-color: $White;
+			box-shadow: 0 0 0 3px rgba($DBlue, 0.1);
+		}
+	}
+
+	.iti__search-icon {
+		left: 24px;
+	}
+
+	.iti__search-icon-svg {
+		width: 16px;
+		height: 16px;
+		stroke: $DBlue;
+		stroke-width: 2;
+	}
+
+	.iti__country {
+		min-height: 42px;
+		padding: 9px 16px;
+		transition: background-color $transition ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($DBlue, 0.06);
+			}
+		}
+
+		&.iti__highlight {
+			background-color: rgba($DBlue, 0.08);
+		}
+
+		.iti__flag {
+			margin-right: 12px;
+		}
+	}
+
+	.iti__country-name {
+		font-weight: 400;
+	}
+
+	.iti__country-check {
+		color: $DBlue;
+	}
+
+	.iti__dial-code {
+		color: $DGrey;
+	}
+}

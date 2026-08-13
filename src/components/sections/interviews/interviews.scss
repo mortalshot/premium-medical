@@ -1,0 +1,140 @@
+.interviews {
+	background-color: $LGrey;
+
+	// .interviews__heading
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 48, 24, 0, $tablet, $minWidth);
+		}
+	}
+
+	// .interviews__title
+	&__title {
+		margin: 0;
+		color: $DBlue;
+	}
+
+	// .interviews__all-link
+	&__all-link {
+		flex: 0 0 auto;
+
+		&.btn {
+			font-size: 16px;
+			letter-spacing: 0;
+		}
+	}
+
+	// .interviews__button-icon
+	&__button-icon {
+		width: 10px;
+		height: 10px;
+		fill: none;
+		stroke: currentColor;
+	}
+
+	// .interviews__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 32px;
+
+		@media (max-width: toEm($notebook)) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	// .interviews__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: 24px;
+		min-width: 0;
+	}
+
+	// .interviews__image-link
+	&__image-link {
+		display: block;
+		overflow: hidden;
+		border-radius: 20px;
+		aspect-ratio: 1.6;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.interviews__image {
+					transform: scale(1.04);
+				}
+			}
+		}
+	}
+
+	// .interviews__image
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform $transition ease;
+	}
+
+	// .interviews__content
+	&__content {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (min-width: toEm($mobile)) {
+			max-width: 352px;
+		}
+	}
+
+	// .interviews__item-title
+	&__item-title {
+		margin: 0;
+		font-size: 20px;
+		font-family: $fontSecond;
+		font-weight: 400;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DBlue;
+
+		&:not(:first-child) {
+			margin-top: 24px;
+		}
+	}
+
+	// .interviews__text
+	&__text {
+		margin: 16px 0 0;
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.6;
+		color: $DGrey;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	// .interviews__more-link
+	&__more-link {
+		margin-top: auto;
+
+		@media (max-width: toEm($mobile)) {
+			display: none;
+		}
+
+		&.btn {
+			min-height: 34px;
+			padding: 6px 14px;
+		}
+	}
+}

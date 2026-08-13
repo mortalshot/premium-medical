@@ -1,0 +1,5 @@
+dist
+node_modules
+.vscode
+dev-server.stdout.log
+dev-server.stderr.log

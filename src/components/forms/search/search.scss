@@ -1,0 +1,84 @@
+.search {
+  position: relative;
+  z-index: 10;
+
+  // .search__toggle
+  &__toggle {
+    outline: 0;
+  }
+
+  // .search__heading
+  &__heading {
+    display: flex !important;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1276px;
+    background-color: $White;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      $transition ease opacity,
+      $transition visibility 0s;
+
+    ._search-active & {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  // .search__input
+  &__input {
+    flex: 1;
+    display: flex;
+
+    input {
+      width: 100%;
+    }
+
+    input,
+    button {
+      height: 100%;
+    }
+  }
+
+  // .search__submit
+  &__submit {
+  }
+
+  // .search__wrapper
+  &__wrapper {
+    display: block !important;
+    background-color: red;
+    position: fixed;
+    height: calc(100% - var(--header-height));
+    overflow-y: auto;
+    z-index: 10;
+    left: 0;
+    top: var(--header-height);
+    width: 100%;
+    min-height: 100svh;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      $transition ease opacity,
+      $transition visibility 0s;
+
+    ._search-active & {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  // .search__container
+  &__container {
+    @include adaptiveValue("padding-block", 30, 24);
+    min-height: calc(100svh - var(--header-height));
+  }
+}

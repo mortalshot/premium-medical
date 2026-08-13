@@ -1,0 +1,76 @@
+.file {
+  display: grid;
+  gap: 10px;
+
+  // .file__input
+  &__input {
+    position: absolute;
+    left: -9999px;
+  }
+
+  // .file__trigger
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid #d7dbe0;
+    border-radius: 6px;
+    background-color: #f7f9fc;
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #eef2f7;
+        border-color: #c3c9d1;
+      }
+    }
+  }
+
+  // .file__list
+  &__list {
+    display: grid;
+    gap: 6px;
+  }
+
+  // .file__item
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border: 1px solid #e6eaf0;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  // .file__name
+  &__name {
+    font-size: 0.9em;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // .file__remove
+  &__remove {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #999;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.service-cards {
+	background-color: $LGrey;
+
+	// .service-cards__list
+	&__list {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 32px;
+
+		@media (min-width: toEm($mobile)) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	// .service-cards__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	// .service-cards__title
+	&__title {
+		margin: 0;
+		font-weight: 300;
+		@include adaptiveValue("font-size", 32, 24, 0, $tablet, $minWidth);
+		line-height: 1.5;
+		color: $DBlue;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 48, 40, 2, $maxWidth, $tablet);
+			@include adaptiveValue("margin-bottom", 40, 24, 3, $tablet, $minWidth);
+		}
+	}
+
+	// .service-cards__card
+	&__card {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+		color: inherit;
+		border-radius: 20px;
+		transition: border-radius $transition ease;
+
+		@media (min-width: toEm($mobile)) {
+			padding: 24px;
+			background-color: $White;
+			border-radius: 20px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-radius: 40px;
+
+				.service-cards__image {
+					border-radius: 40px;
+				}
+			}
+		}
+	}
+
+	// .service-cards__picture
+	&__picture {
+		display: block;
+		width: 100%;
+	}
+
+	// .service-cards__image
+	&__image {
+		width: 100%;
+		aspect-ratio: 372 / 190;
+		object-fit: cover;
+		border-radius: 20px;
+		transition: border-radius $transition ease;
+
+		@media (min-width: toEm($mobile)) {
+			aspect-ratio: 1.08;
+		}
+
+		@media (min-width: toEm($tablet)) {
+			aspect-ratio: 424 / 376;
+		}
+
+		@media (min-width: toEm($notebook)) {
+			aspect-ratio: 736 / 376;
+		}
+	}
+
+	// .service-cards__text
+	&__text {
+		margin: 0;
+		font-family: $fontSecond;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: -0.03em;
+		color: $DBlue;
+
+		@media (min-width: toEm($tablet)) {
+			font-size: 24px;
+		}
+	}
+
+	// .service-cards__link
+	&__link {
+		margin-top: auto;
+
+		&.btn {
+			min-height: 53px;
+			font-size: 18px;
+			padding-inline: 24px;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			display: none;
+		}
+	}
+
+	// .service-cards__link-icon
+	&__link-icon {
+		width: 16px;
+		height: 16px;
+		fill: none;
+		stroke: currentColor;
+	}
+}
